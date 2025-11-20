@@ -4,6 +4,7 @@
 #include <ctime>
 
 using namespace std;
+
 int partition(vector<int>& A, int low, int high) {
     int pivot = A[high];
     int i = low;
@@ -17,11 +18,13 @@ int partition(vector<int>& A, int low, int high) {
     swap(A[i], A[high]);
     return i;
 }
+
 int randomizedPartition(vector<int>& A, int low, int high) {
     int pivotIndex = low + rand() % (high - low + 1);
     swap(A[pivotIndex], A[high]);
     return partition(A, low, high);
 }
+
 int randomizedSelect(vector<int>& A, int low, int high, int i) {
     if (low == high)
         return A[low];
@@ -36,6 +39,7 @@ int randomizedSelect(vector<int>& A, int low, int high, int i) {
     else
         return randomizedSelect(A, q + 1, high, i - k);
 }
+
 int findIthSmallest(vector<int>& A, int i) {
     srand(time(0));
     return randomizedSelect(A, 0, A.size() - 1, i);
@@ -54,7 +58,7 @@ int main() {
         cin >> A[j];
     }
 
-    cout << "Enter i (to find the i-th smallest element, 1-based index): ";
+    cout << "Enter i (1-based index): ";
     cin >> i;
 
     if (i < 1 || i > n) {
