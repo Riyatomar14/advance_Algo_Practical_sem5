@@ -61,15 +61,6 @@ int main() {
 
     return 0;
 }
-   
-    cout << "Vertex   Distance from Source\n";
-    for (int i = 0; i < V; i++) {
-        if (dist[i] == INF)
-            cout << i << "\t" << "INF" << endl;
-        else
-            cout << i << "\t" << dist[i] << endl;
-    }
-}
 
 int main() {
     int V, E;
