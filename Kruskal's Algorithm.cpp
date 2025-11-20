@@ -48,7 +48,7 @@ int main() {
     vector<pair<int,int>> mst;
     int total_cost = 0;
 
-    // ⭐ Your missing loop (fixed)
+
     for (auto &edge : edges) {
         int w = edge.first;
         int u = edge.second.first;
